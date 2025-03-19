@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:text="@string/title"
+        android:textColor="@color/black"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/weightTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/titleTV"
+        android:layout_marginTop="30dp"
+        android:text="@string/weight"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/weightTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/weightTV"
+        android:layout_alignBaseline="@id/weightTV"
+        android:layout_marginLeft="60dp"
+        android:hint="Enter weight in Kg"
+        android:inputType="number|numberDecimal"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/heightTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weightTV"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/height"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/heightTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/weightTV"
+        android:layout_alignBaseline="@id/heightTV"
+        android:layout_marginLeft="60dp"
+        android:hint="Enter Height in cm"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:inputType="number|numberDecimal"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/resultTitleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heightTV"
+        android:layout_marginTop="75dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/ResultTitle"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/resultTV"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/resultTitleTV"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#AEEA00"
+        android:textSize="30dp" />
+
+<Button
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_below="@id/resultTV"
+android:layout_marginTop="50dp"
+android:onClick="calculateBMI"
+android:textStyle="bold"
+android:textSize="25dp"
+android:layout_centerHorizontal="true"
+android:text="@string/calculate" />
+
+    </RelativeLayout>

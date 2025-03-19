@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/bill_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bill"
+        android:textSize="25dp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="40dp"
+        android:background="#CAB3FF"
+        android:textColor="#1D0542"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tip_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip %"
+        android:textSize="25dp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="27dp"
+        android:background="#CAB3FF"
+        android:textColor="#1D0542"
+        android:layout_below="@id/bill_label"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/user_bill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Bill"
+        android:textSize="25dp"
+        android:layout_toRightOf="@id/bill_label"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignBaseline="@id/bill_label"
+        android:gravity="center"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/user_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Tip"
+        android:textSize="25dp"
+        android:layout_toRightOf="@id/tip_label"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignBaseline="@id/tip_label"
+        android:gravity="center"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#24035B"
+        android:layout_below="@id/tip_label"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="18dp"
+        />
+
+    <TextView
+        android:id="@+id/tip_total_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip"
+        android:textSize="25dp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="40dp"
+        android:background="#CAB3FF"
+        android:textColor="#1D0542"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/line" />
+
+    <TextView
+        android:id="@+id/final_total_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        android:textSize="25dp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="30dp"
+        android:background="#CAB3FF"
+        android:textColor="#1D0542"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/tip_total_label" />
+
+    <TextView
+        android:id="@+id/tip_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  "
+        android:textSize="25dp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="30dp"
+        android:background="#B0D397"
+        android:textColor="#1D0542"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@id/tip_total_label"
+        android:layout_alignBaseline="@id/tip_total_label"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/total_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  "
+        android:textSize="25dp"
+        android:paddingVertical="6dp"
+        android:paddingHorizontal="30dp"
+        android:background="#B0D397"
+        android:textColor="#1D0542"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@id/final_total_label"
+        android:layout_alignBaseline="@id/final_total_label"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/calculateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:textSize="20dp"
+        android:layout_below="@id/total_display"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FirstApplication</string>
+    <string name="Fn">First Name</string>
+    <string name="Ln">Last Name</string>
+</resources>
