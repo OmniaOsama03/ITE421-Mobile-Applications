@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:gravity="center"
+    android:stretchColumns="0"
+    android:background="#ffffff">
+
+    <TableRow>
+    <TextView
+        android:text="Enter the first number:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    </TableRow>
+
+    <TableRow>
+        <EditText
+            android:id="@+id/num1EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter first number"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:textSize="15dp" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Enter the second number:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <EditText
+            android:id="@+id/num2EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter second number"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:textSize="15dp" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose an operation:"
+            android:textSize="20dp"
+            android:paddingTop="20dp" />
+    </TableRow>
+
+    <TableRow>
+        <RadioButton
+            android:id="@+id/addRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add (+)" />
+    </TableRow>
+
+    <TableRow>
+        <RadioButton
+            android:id="@+id/subRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtract (-)" />
+    </TableRow>
+
+    <TableRow>
+        <RadioButton
+            android:id="@+id/mulRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Multiply (*)" />
+    </TableRow>
+
+    <TableRow>
+        <RadioButton
+            android:id="@+id/divRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Divide (/)" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/submitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:onClick="submitData"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="120dp"/>
+    </TableRow>
+
+</TableLayout>
