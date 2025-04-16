@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="omnia.adu.ac.ae.candystore.MainActivity">
+
+    <item
+        android:id="@+id/settingItem"
+        android:orderInCategory="100"
+        android:title="Settings"
+        android:icon="@drawable/settings_icon"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/addItem"
+        android:orderInCategory="100"
+        android:title="Add"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/updateItem"
+        android:orderInCategory="100"
+        android:title="Update"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/deleteItem"
+        android:orderInCategory="100"
+        android:title="Delete"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/exitItem"
+        android:orderInCategory="100"
+        android:title="Exit"
+        android:icon="@drawable/exit_icon"
+        app:showAsAction="ifRoom" />
+</menu>
