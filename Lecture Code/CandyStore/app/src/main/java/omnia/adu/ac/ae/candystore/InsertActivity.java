@@ -32,6 +32,10 @@ public class InsertActivity extends AppCompatActivity {
         String name = candyName.getText().toString();
         Float price = Float.parseFloat(candyPrice.getText().toString());
 
+        //Clear the text
+        candyName.setText("");
+        candyPrice.setText("");
+
         Toast.makeText(this, name + " with price"  + price + " has been added!", Toast.LENGTH_LONG).show();
     }
 
