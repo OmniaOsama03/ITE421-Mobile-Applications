@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    //^Understand the concepts, things like binding.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +65,18 @@ public class MainActivity extends AppCompatActivity {
         }else if (item.getItemId() == R.id.updateItem)
         {
             Toast.makeText(this, "UPDATE is selected", Toast.LENGTH_LONG).show();
+
+            Intent updateIntent = new Intent(this, UpdateActivity.class);
+            this.startActivity(updateIntent);
+
             return true;
         }else if (item.getItemId() == R.id.deleteItem)
         {
             Toast.makeText(this, "DELETE is selected", Toast.LENGTH_LONG).show();
+
+            Intent deleteIntent =  new Intent(this, DeleteActivity.class);
+            this.startActivity(deleteIntent);
+
             return true;
 
         }else //Last one left is exit item

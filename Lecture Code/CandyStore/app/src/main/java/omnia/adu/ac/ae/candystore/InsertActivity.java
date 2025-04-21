@@ -32,11 +32,19 @@ public class InsertActivity extends AppCompatActivity {
         String name = candyName.getText().toString();
         Float price = Float.parseFloat(candyPrice.getText().toString());
 
+        //Make the object
+        Candy candy = new Candy(0, name, price);
+
+        DatabaseManager dbHelper = new DatabaseManager(this);
+        dbHelper.insertCandy(candy);
+
         //Clear the text
         candyName.setText("");
         candyPrice.setText("");
 
-        Toast.makeText(this, name + " with price"  + price + " has been added!", Toast.LENGTH_LONG).show();
+
+        //Toast.makeText(this, name + " with price"  + price + " has been added!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, candy.toString(), Toast.LENGTH_LONG).show();
     }
 
     public void backToMain(View v)
