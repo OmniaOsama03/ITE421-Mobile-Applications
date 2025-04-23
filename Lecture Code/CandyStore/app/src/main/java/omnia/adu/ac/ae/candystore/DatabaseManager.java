@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -21,8 +22,6 @@ public class DatabaseManager extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase db) {
         String createTable = "create table "+ TABLE_NAME+ "(id integer primary key autoincrement, name text, price real)";
         db.execSQL(createTable);
-
-        //P.S Written like that for readibility.
     }
 
     @Override
@@ -31,14 +30,18 @@ public class DatabaseManager extends SQLiteOpenHelper
         onCreate(db);
     }
 
-    //P.S Dr didn't make this one yet
     public void insertCandy(Candy candy) {
+        //Open the database for writing
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("name", candy.getName());
-        values.put("price", candy.getPrice());
 
-        db.insert(TABLE_NAME, null, values);
+        //Construct the string that holds the SQL statement
+        String sqlInsert = "insert into " + TABLE_NAME + " values(null, '" + candy.getName() + "', " + candy.getPrice() + ")";
+
+        //Execute the statement
+        db.execSQL(sqlInsert);
+        Log.w("CANDY INSERT", "The candy " + candy + " has been inserted!");
+
+        //Close the db to avoid keeping it valnerable
         db.close();
     }
 }
