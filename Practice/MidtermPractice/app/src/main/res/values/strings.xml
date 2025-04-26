@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MidtermPractice</string>
+    <string name = "example"> Hello World! My name is Omnia!</string>
+</resources>

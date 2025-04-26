@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#E6D4BF">
+
+    <TextView
+        android:id="@+id/label_bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:paddingBottom = "5dp"
+        android:text="Enter bill:"
+        android:textColor="#31270E"
+        android:textSize="30dp"
+        android:textStyle = "bold"/>
+
+    <EditText
+        android:id="@+id/text_bill"
+        android:layout_width = "135dp"
+        android:layout_height = "wrap_content"
+        android:hint="Enter Bill"
+        android:textSize = "25dp"
+        android:layout_toRightOf = "@id/label_bill"
+        android:layout_alignBottom="@id/label_bill"
+        android:layout_marginLeft = "75dp"
+        android:inputType = "numberDecimal"
+        />
+
+    <TextView
+        android:id="@+id/label_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="170dp"
+        android:paddingBottom = "5dp"
+        android:text="Enter Tip (%):"
+        android:textColor="#31270E"
+        android:textSize="30dp"
+        android:textStyle = "bold"/>
+
+    <EditText
+        android:id="@+id/text_percentage"
+        android:layout_width = "135dp"
+        android:layout_height = "wrap_content"
+        android:hint="Enter Tip "
+        android:textSize = "25dp"
+        android:layout_toRightOf = "@id/label_percentage"
+        android:layout_alignBottom="@id/label_percentage"
+        android:layout_marginLeft = "20dp"
+        android:inputType = "numberDecimal"
+        />
+
+    <TextView
+        android:id="@+id/separation"
+        android:layout_width= "370dp"
+        android:layout_height = "5dp"
+        style = "@style/separationLine"/>
+
+
+
+</RelativeLayout>

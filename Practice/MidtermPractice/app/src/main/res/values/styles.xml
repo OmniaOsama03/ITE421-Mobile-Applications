@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="separationLine">
+        <item name = "android:background">#280E03</item>
+        <item name = "android:layout_below">@id/label_percentage</item>
+        <item name = "android:layout_marginTop">30dp</item>
+        <item name = "android:layout_marginLeft">30dp</item>
+        <item name = "android:layout_marginRight">30dp</item>
+    </style>
+
+    <style name="separationLine2" parent = "separationLine">
+        <item name = "android:paddingTop">10dp</item>
+    </style>
+
+
+</resources>
