@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MortgageEdit">
+
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        android:textSize="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="40dp"
+        />
+
+<EditText
+    android:id="@+id/nameED"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:hint="Enter name"
+    android:textSize="25dp"
+    android:layout_toRightOf="@id/nameLabel"
+    android:layout_alignBaseline="@id/nameLabel"/>
+
+    <TextView
+        android:id="@+id/ageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age: "
+        android:textSize="30dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="40dp"
+        />
+
+    <EditText
+        android:id="@+id/ageED"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter age"
+        android:inputType="number"
+        android:textSize="25dp"
+        android:layout_toRightOf="@id/ageLabel"
+        android:layout_alignBaseline="@id/ageLabel"/>
+
+
+    <TextView
+        android:id="@+id/colorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favorite Color: "
+        android:textSize="30dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="40dp"
+        />
+
+    <RadioGroup
+        android:id="@+id/colorRG"
+        android:layout_below="@id/colorLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation = "horizontal"
+        android:layout_marginTop="20dp"
+        >
+        <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/yellow" android:text="Yellow" android:layout_marginLeft="50dp" android:textSize="20sp"/>
+        <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/blue" android:text="Blue" android:layout_marginLeft="30dp" android:textSize="20sp"/>
+        <RadioButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/green" android:text="Green" android:layout_marginLeft="30dp" android:textSize="20sp"/>
+    </RadioGroup>
+
+    <Button
+        android:id = "@+id/changeTextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/colorRG"
+        android:text="SAVE"
+        android:textSize="20sp"
+        android:onClick = "saveText"/>
+
+</RelativeLayout>

@@ -12,5 +12,13 @@
         <item name = "android:paddingTop">10dp</item>
     </style>
 
+    <style name = "separationLine3">
+        <item name = "android:layout_height"> 2dp </item>
+        <item name = "android:layout_marginTop"> 20dp </item>
+        <item name = "android:layout_marginBottom"> 20dp </item>
+        <item name = "android:layout_marginLeft"> 10dp </item>
+        <item name = "android:layout_marginRight"> 10dp </item>
+        <item name = "android:background"> @color/purp </item>
+    </style>
 
 </resources>

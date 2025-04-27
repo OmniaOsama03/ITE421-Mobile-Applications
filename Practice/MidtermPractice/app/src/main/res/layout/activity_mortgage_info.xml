@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MortgageInfo"
+    android:stretchColumns="*">
+
+
+  <TableRow android:layout_marginTop = "100dp">
+    <TextView
+        android:id = "@+id/row0Column0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Column 1"
+        android:textSize="20dp"
+        android:gravity = "center"/>
+
+    <TextView
+        android:id = "@+id/row0Column1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Column 2"
+        android:textSize="20dp"
+        android:gravity = "center"/>
+
+    <TextView
+        android:id = "@+id/row0Column2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Column 3"
+        android:textSize="20dp"
+        android:gravity = "center"/>
+  </TableRow>
+
+  <TextView
+      style = "@style/separationLine3"/>
+
+  <TableRow>
+    <Button
+        android:id = "@+id/changeTextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EDIT"
+        android:textSize="20dp"
+        android:gravity = "center"
+        android:layout_column = "1"
+        android:onClick = "changeText"/>
+  </TableRow>
+
+
+</TableLayout>

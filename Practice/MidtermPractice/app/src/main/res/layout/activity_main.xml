@@ -62,6 +62,17 @@
         android:layout_height = "5dp"
         style = "@style/separationLine"/>
 
+    <Button
+        android:id = "@+id/nextActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/separation"
+        android:text="START"
+        android:textSize="20sp"
+        android:onClick = "goToNext"/>
+
 
 
 </RelativeLayout>
