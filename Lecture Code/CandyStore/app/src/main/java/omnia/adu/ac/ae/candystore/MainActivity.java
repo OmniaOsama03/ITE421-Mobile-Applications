@@ -84,8 +84,11 @@ public class MainActivity extends AppCompatActivity {
             System.exit(0); //To allow the system to exit with no error
         }
 
+        //Note- don't use switch here. it won't work.
+
         return super.onOptionsItemSelected(item);
     }
 
-    //Note- don't use switch here. it won't work.
+
+
 }
