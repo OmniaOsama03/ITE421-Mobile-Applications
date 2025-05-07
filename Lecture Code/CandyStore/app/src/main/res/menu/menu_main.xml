@@ -3,35 +3,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="omnia.adu.ac.ae.candystore.MainActivity">
 
+    <!-- Parent menu item -->
     <item
-        android:id="@+id/settingItem"
-        android:orderInCategory="100"
-        android:title="Settings"
-        android:icon="@drawable/settings_icon"
-        app:showAsAction="ifRoom" />
+        android:id="@+id/mainItem"
+        android:title=""
+        android:icon="@drawable/more"
+        app:showAsAction="always">
 
-    <item
-        android:id="@+id/addItem"
-        android:orderInCategory="100"
-        android:title="Add"
-        app:showAsAction="ifRoom" />
+        <!-- Submenu items -->
+        <menu>
+            <item
+                android:id="@+id/settingItem"
+                android:title="Settings"
+                android:icon="@drawable/settings_icon"
+                app:showAsAction="never" />
 
-    <item
-        android:id="@+id/updateItem"
-        android:orderInCategory="100"
-        android:title="Update"
-        app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/addItem"
+                android:title="Add"
+                android:icon="@drawable/add"
+                app:showAsAction="never" />
 
-    <item
-        android:id="@+id/deleteItem"
-        android:orderInCategory="100"
-        android:title="Delete"
-        app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/updateItem"
+                android:title="Update"
+                android:icon="@drawable/update"
+                app:showAsAction="never" />
 
-    <item
-        android:id="@+id/exitItem"
-        android:orderInCategory="100"
-        android:title="Exit"
-        android:icon="@drawable/exit_icon"
-        app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/deleteItem"
+                android:title="Delete"
+                android:icon="@drawable/delete"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/exitItem"
+                android:title="Exit"
+                android:icon="@drawable/exit_icon"
+                app:showAsAction="never" />
+        </menu>
+    </item>
 </menu>
