@@ -67,6 +67,7 @@ public class TaskOne extends AppCompatActivity {
             if (isPasswordValid(password1))
             {
                 passwordInput2.setEnabled(true);
+                submitButton.setEnabled(false);
                 notificationText.setText("");
 
             } else
@@ -103,36 +104,49 @@ public class TaskOne extends AppCompatActivity {
         }
     }
 
-    private boolean isPasswordValid(String password) {
+    private boolean isPasswordValid(String password)
+    {
+        //Rule 1: at least 8 characters
         if (password.length() < 8) return false;
 
-        // Rule 2: Only valid characters
+        //Rule 2: Only valid characters
         if (!password.matches("[a-zA-Z0-9*%#&]+")) return false;
 
-        // Rule 3: At least two digits
+        //Rule 3: At least two digits
         int digitCount = 0;
-        for (char c : password.toCharArray()) {
-            if (Character.isDigit(c)) digitCount++;
+
+        for (int character = 0; character < password.length(); character++)
+        {
+            char current = password.charAt(character);
+
+            if (Character.isDigit(current))
+                digitCount++;
         }
+
         if (digitCount < 2) return false;
 
-        // Rule 4: Starts with uppercase or digit
+        //Rule 4: Starts with uppercase or digit
         char firstChar = password.charAt(0);
-        if (!(Character.isUpperCase(firstChar) || Character.isDigit(firstChar))) return false;
 
-        // Rule 5: At least one uppercase
+        if (!(Character.isUpperCase(firstChar) || Character.isDigit(firstChar)))
+            return false;
+
+        //Rule 5: At least one uppercase
         if (!password.matches(".*[A-Z].*")) return false;
 
         // Rule 6: At least one lowercase
         if (!password.matches(".*[a-z].*")) return false;
 
-        // Rule 7: Contains at least one of # or &
-        if (!(password.contains("#") || password.contains("&"))) return false;
+        //Rule 7: Contains at least one of # or &
+        if (!(password.contains("#") || password.contains("&")))
+            return false;
 
-        // Rule 8: No same letter in succession (case insensitive)
-        for (int i = 1; i < password.length(); i++) {
+        //Rule 8: No same letter in succession ( my implementation is case insensitive)
+        for (int i = 1; i < password.length(); i++)
+        {
             char prev = password.charAt(i - 1);
             char curr = password.charAt(i);
+
             if (Character.isLetter(prev) && Character.isLetter(curr) &&
                     Character.toLowerCase(prev) == Character.toLowerCase(curr)) {
                 return false;
@@ -142,4 +156,4 @@ public class TaskOne extends AppCompatActivity {
         return true;
     }
 
-     }
+}
