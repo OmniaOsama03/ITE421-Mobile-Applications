@@ -15,7 +15,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
      //Omnia Osama Ahmed
-    // 1084505
+     //1084505
+
 public class TaskOne extends AppCompatActivity {
 
     EditText passwordInput1, passwordInput2;
@@ -110,7 +111,7 @@ public class TaskOne extends AppCompatActivity {
         if (password.length() < 8) return false;
 
         //Rule 2: Only valid characters
-        if (!password.matches("[a-zA-Z0-9*%#&]+")) return false;
+        if (!password.matches("[A-Z0-9*%#&a-z]+")) return false;
 
         //Rule 3: At least two digits
         int digitCount = 0;
@@ -125,7 +126,7 @@ public class TaskOne extends AppCompatActivity {
 
         if (digitCount < 2) return false;
 
-        //Rule 4: Starts with uppercase or digit
+        //Rule 4: Starts with uppercase or digits
         char firstChar = password.charAt(0);
 
         if (!(Character.isUpperCase(firstChar) || Character.isDigit(firstChar)))
@@ -137,8 +138,8 @@ public class TaskOne extends AppCompatActivity {
         // Rule 6: At least one lowercase
         if (!password.matches(".*[a-z].*")) return false;
 
-        //Rule 7: Contains at least one of # or &
-        if (!(password.contains("#") || password.contains("&")))
+        //Rule 7: Contains at least one of #, &, *, or %
+        if (!(password.contains("*") || password.contains("%") || password.contains("#") || password.contains("&")))
             return false;
 
         //Rule 8: No same letter in succession ( my implementation is case insensitive)
@@ -148,7 +149,8 @@ public class TaskOne extends AppCompatActivity {
             char curr = password.charAt(i);
 
             if (Character.isLetter(prev) && Character.isLetter(curr) &&
-                    Character.toLowerCase(prev) == Character.toLowerCase(curr)) {
+                Character.toLowerCase(prev) == Character.toLowerCase(curr))
+            {
                 return false;
             }
         }
