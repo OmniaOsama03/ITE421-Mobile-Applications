@@ -18,13 +18,22 @@ import omnia.adu.ac.ae.candystore.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ScrollView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     //^Understand the concepts, things like binding.
+
+    private DatabaseManager dbManager;
+    private double total;
+    private int buttonWidth;
+
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,18 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
+        scrollView = findViewById(R.id.scrollView);
+
+        //Added code from BB, but it isn't there
+        updateView();
+
+    }
+
+    public void updateView()
+    {
+        ArrayList<Candy> candies = dbManager.selectAll();
+
+        //Added code from BB, but it isn't there
     }
 
     @Override
@@ -89,6 +110,28 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void onStart()
+    {
+        super.onStart();
+        updateView();
+    }
+
+    private class ButtonHandler implements View.OnClickListener
+    {
+
+        @Override
+        public void onClick(View v)
+        {
+            total += ((CandyButton)v).getPrice();
+
+            double formattedTotal = (int) (total * 100)/100.0;
+
+            Toast.makeText(MainActivity.this, "New total is: AED" + total, Toast.LENGTH_LONG).show();
+            //Because we're in an inner class, the context must be explicitly mentioned.
+
+            updateView();
+        }
+    }
 
 
 }
