@@ -20,9 +20,12 @@ public class PuzzleGame {
         parts[6] = "FLUTTER";
     }
 
-    public boolean solved( String [] solution ) {
-        if( solution != null && solution.length == parts.length ) {
-            for( int i = 0; i < parts.length; i++ ) {
+    public boolean solved( String [] solution )
+    {
+        if( solution != null && solution.length == parts.length )
+        {
+            for( int i = 0; i < parts.length; i++ ) //Looping through elements in solution array to see if they match parts array
+            {
                 if( !solution[i].equals( parts[i] ) )
                     return false;
             }
@@ -32,23 +35,31 @@ public class PuzzleGame {
             return false;
     }
 
-    public String [] scramble( ) {
+    public String [] scramble( ) //Scrambles the pieces in the parts array until they're no longer in the same order
+    {
         String [] scrambled = new String[parts.length];
-        for( int i = 0; i < parts.length; i++ ) {
-            scrambled[i] = parts[i];
+
+        for( int i = 0; i < parts.length; i++ )
+        {
+            scrambled[i] = parts[i]; //Copying as is
             Log.w("RANDOM", " Copying " +scrambled[i]);
         }
 
 
-        while( solved( scrambled ) ) {
-            for( int i = 0; i < scrambled.length; i++ ) {
-                int n = random.nextInt( scrambled.length  ) ;
+        while(solved(scrambled ))
+        {
+            for( int i = 0; i < scrambled.length; i++ )
+            {
+                int n = random.nextInt(scrambled.length); //generates a random number from 0 - 7 (exclusive)
+
+                //Swapping the current text piece with one at the random index
                 String temp = scrambled[i];
                 scrambled[i] = scrambled[n];
                 scrambled[n] = temp;
             }
         }
-        for ( int i = 0 ; i < scrambled.length ; i++)
+
+        for ( int i = 0 ; i < scrambled.length ; i++) //Just logging the scrambled text
             Log.w("RANDOM", " Randomize " +scrambled[i]);
 
         return scrambled;

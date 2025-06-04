@@ -31,21 +31,27 @@ public class MainActivity extends AppCompatActivity
         int screenHeight = size.y;
         int puzzleWidth = size.x;
 
+        //Get screen density to help convert dp to pixels
         Resources res = getResources();
         DisplayMetrics metrics = res.getDisplayMetrics();
         float pixelDensity = metrics.density;
 
+        //Finding action bar height
         TypedValue tv = new TypedValue( );
         int actionBarHeight = ( int ) ( pixelDensity * ACTION_BAR_HEIGHT );
-        if( getTheme( ).resolveAttribute( android.R.attr.actionBarSize,
+
+        //checks the actual theme-defined size of the action bar and replaces our estimated value with the real one, if available.
+        if( getTheme( ).resolveAttribute( android.R.attr.actionBarSize, //tv will temporary hold the action bar size
                 tv, true ) )
-            actionBarHeight = TypedValue.complexToDimensionPixelSize( tv.data,
+            actionBarHeight = TypedValue.complexToDimensionPixelSize( tv.data, //conversion to pixels
                     metrics );
 
+        //Same steps as before, but for the status bar (calculating estimate then trying to find real one from android's internal resources
         int statusBarHeight = ( int ) ( pixelDensity * STATUS_BAR_HEIGHT );
-        Toast.makeText(this, " values is " + statusBarHeight, Toast.LENGTH_SHORT).show();
-        int resourceId =
-                res.getIdentifier( "status_bar_height", "dimen", "android" );
+
+        //Toast.makeText(this, " values is " + statusBarHeight, Toast.LENGTH_SHORT).show();
+        int resourceId = res.getIdentifier( "status_bar_height", "dimen", "android" );
+
         if( resourceId != 0 )  // found resource for status bar height
             statusBarHeight = res.getDimensionPixelSize(resourceId);
 
@@ -53,18 +59,26 @@ public class MainActivity extends AppCompatActivity
 
         //  int puzzleHeight = screenHeight - statusBarHeight - actionBarHeight;
         int puzzleHeight = screenHeight - statusBarHeight -actionBarHeight;
-        puzzleView = new PuzzleGameView( this, puzzleWidth, puzzleHeight,
-                puzzle.getNumberOfParts( ) );
+
+        puzzleView = new PuzzleGameView( this, puzzleWidth, puzzleHeight, puzzle.getNumberOfParts( ) );
+
         String [] scrambled = puzzle.scramble( );
+
+        //fill the gui with the pieces then enable the listeners on the them
         puzzleView.fillGui( scrambled );
         puzzleView.enableListener( this );
+
+        //Contentview will be the puzzleview (a child of relative layout)
         setContentView( puzzleView );
     }
 
-    public boolean onTouch( View v, MotionEvent event ) {
+    public boolean onTouch( View v, MotionEvent event )
+    {
         int index = puzzleView.indexOfTextView( v );
         int action = event.getAction( );
-        switch( action ) {
+
+        switch( action )
+        {
             case MotionEvent.ACTION_DOWN:
                 // initialize data before move
                 Log.w(MA,"DOWN " + event.getX() +" " +
