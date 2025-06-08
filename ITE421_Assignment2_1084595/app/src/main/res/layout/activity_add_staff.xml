@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddStaffActivity"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add a Staff member"
+        android:textSize="22sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="100dp"/>
+
+    <EditText
+        android:id="@+id/fullNameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleText"
+        android:hint="Enter Full Name" />
+
+    <EditText
+        android:id="@+id/departmentET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Department"
+        android:layout_below="@id/fullNameET"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/positionET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Position"
+        android:layout_below="@id/departmentET"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/salaryET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Monthly Salary"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/positionET"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Staff"
+        android:layout_below="@id/salaryET"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="submit"/>
+</RelativeLayout>

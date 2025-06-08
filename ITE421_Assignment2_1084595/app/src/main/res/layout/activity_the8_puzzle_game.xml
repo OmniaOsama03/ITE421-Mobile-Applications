@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".The8PuzzleGame">
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADU Puzzle Game"
+        android:layout_marginTop="100dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#63003F"
+        android:layout_centerHorizontal="true" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTV"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:alignmentMode="alignMargins"
+        android:useDefaultMargins="true">
+
+        <TextView
+            android:id="@+id/tile0"
+            style="@style/TileStyle" />
+
+        <TextView
+            android:id="@+id/tile1"
+            style="@style/TileStyle" />
+
+        <TextView
+            android:id="@+id/tile2"
+            style="@style/TileStyle" />
+
+        <TextView
+            android:id="@+id/tile3"
+            style="@style/TileStyle" />
+
+        <TextView
+            android:id="@+id/tile4"
+            style="@style/TileStyle" />
+
+        <TextView
+            android:id="@+id/tile5"
+            style="@style/TileStyle" />
+
+        <TextView
+            android:id="@+id/tile6"
+            style="@style/TileStyle" />
+
+        <TextView
+            android:id="@+id/tile7"
+            style="@style/TileStyle" />
+
+        <TextView
+            android:id="@+id/tile8"
+            style="@style/TileStyle" />
+    </GridLayout>
+
+
+    <TextView
+        android:id="@+id/moveCounterTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of moves: 0"
+        android:textColor="#000080"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/gridLayout"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
