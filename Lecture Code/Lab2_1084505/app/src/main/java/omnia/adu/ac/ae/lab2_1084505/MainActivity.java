@@ -69,32 +69,36 @@ public class MainActivity extends AppCompatActivity
 
     public boolean onTouch( View v, MotionEvent event ) {
         int index = puzzleView.indexOfTextView( v );
+
         int action = event.getAction( );
-        switch( action ) {
+
+        switch( action )
+        {
             case MotionEvent.ACTION_DOWN:
-                // initialize data before move
-                Log.w(MA,"DOWN " + event.getX() +" " +
-                        event.getY());
+
                 puzzleView.updateStartPositions( index, ( int ) event.getY( ) );
                 // bring v to front
                 puzzleView.bringChildToFront( v );
                 break;
+
             case MotionEvent.ACTION_MOVE:
-                Log.w(MA,"SWIPING " + event.getX() +" " +
-                        event.getY());
+
                 // update y position of TextView being moved
                 puzzleView.moveTextViewVertically( index, ( int ) event.getY( ) );
                 break;
+
             case MotionEvent.ACTION_UP:
-                Log.w(MA,"UP " + event.getX() +" " +
-                        event.getY());
                 // move is complete: swap the 2 TextViews
                 int newPosition = puzzleView.tvPosition( index );
+
                 puzzleView.placeTextViewAtPosition( index, newPosition );
+
                 // if user just won, disable listener to stop the game
                 if( puzzle.solved( puzzleView.currentSolution( ) ) )
                     puzzleView.disableListener( );
+
                 break;
+
         }
         return true;
     }

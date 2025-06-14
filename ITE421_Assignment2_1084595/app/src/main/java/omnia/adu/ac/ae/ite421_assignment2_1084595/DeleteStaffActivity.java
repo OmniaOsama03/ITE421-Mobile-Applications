@@ -62,6 +62,7 @@ public class DeleteStaffActivity extends AppCompatActivity {
                 public void onClick(View v)
                 {
                     dbManager.deleteStaff(staff);
+
                     Toast.makeText(DeleteStaffActivity.this, "Staff deleted", Toast.LENGTH_SHORT).show();
                     loadStaffList(); //refreshing the list
                 }

@@ -35,6 +35,7 @@ public class PuzzleGameView extends RelativeLayout {
         colors = new int[tvs.length];
         params = new LayoutParams[tvs.length];
         Random random = new Random( );
+
         labelHeight = height / numberOfPieces;
         for( int i = 0; i < tvs.length; i++ ) {
             tvs[i] = new TextView( activity );

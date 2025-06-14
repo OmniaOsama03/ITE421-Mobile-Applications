@@ -100,7 +100,7 @@ public class DatabaseManager extends SQLiteOpenHelper
     public void deleteById( int id )
     {
         SQLiteDatabase db = this.getWritableDatabase( );
-        String sqlDelete = "delete from " + TABLE_NAME + " where id " + " = " + id;
+        String sqlDelete = "delete from " + TABLE_NAME + " where id = " + id;
 
         db.execSQL( sqlDelete );
         db.close( );
